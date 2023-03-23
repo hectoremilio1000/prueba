@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+
+
+let initialState = {
+
+    id: 1,
+    nombre: 'jose',
+    apellido: 'juan'
+}
 
 function App() {
+
+  const [person, setPerson] = useState(initialState)
+
+
+
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{margin:20}}>
+      <p>cambia nombre, da click en el botón</p>
+      <input />
+      <button onClick={e => console.log(e)}>cambiar nombre</button>
+      <p>{person.nombre}</p>
+      <p>{person.apellido}</p>
     </div>
   );
 }
